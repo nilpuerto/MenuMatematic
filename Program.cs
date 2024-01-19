@@ -1,9 +1,22 @@
-﻿using System;
-using System.Threading;
-
+﻿
 class Program
 {
-    // Métode per calcular el MCD
+    //1.Calcular máxim
+    static int Maxim(int num1, int num2)
+    {
+        if (num1 > num2)
+        {
+            return num1;
+        }
+        else
+        {
+            return num2;
+        }
+    }
+
+
+
+    // 2.Métode per calcular el MCD
     static int CalcularMCD(int a, int b)
     {
         while (b != 0)
@@ -15,7 +28,7 @@ class Program
         return a;
     }
 
-    // Métode per calcular el MCM
+    // 3.Métode per calcular el MCM
     static int CalcularMCM(int a, int b)
     {
         int mcd = CalcularMCD(a, b);
@@ -23,7 +36,7 @@ class Program
 
         return mcm;
     }
-
+    // 4.Calcular Factorial
     static double CalcularFactorial(double n)
     {
         if (n == 0 || n == 1)
@@ -36,37 +49,61 @@ class Program
         }
     }
 
+    //Main
     static void Main()
     {
+        //Variables
         int opcio;
         int num1 = 0;
         int num2 = 0;
         double num = 0;
 
+        //Interfaz
         do
         {
+            //Colors
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            // Titul
-            Console.WriteLine(" ╔═════════════════════════════════════════════════════════╗ ");
-            Console.WriteLine(" ║                    MENU MATEMATIC                       ║ ");
-            Console.WriteLine(" ║=========================================================║ ");
-            Console.WriteLine(" ║                    1) Maxim                             ║ ");
-            Console.WriteLine(" ║                    2) MCD                               ║ ");
-            Console.WriteLine(" ║                    3) MCM                               ║ ");
-            Console.WriteLine(" ║                    4) Factorial                         ║ ");
-            Console.WriteLine(" ║                    5) Combinatori                       ║ ");
-            Console.WriteLine(" ║                    6) Divisor Major                     ║ ");
-            Console.WriteLine(" ║                    7) Numero Primer                     ║ ");
-            Console.WriteLine(" ║                    8) NPrimers                          ║ ");
-            Console.WriteLine(" ║                    9) Sortir                            ║ ");
-            Console.WriteLine(" ║=========================================================║ ");
-            Console.WriteLine(" ║   - Escull una opcio -                                  ║ ");
-            Console.WriteLine(" ║=========================================================║ ");
-            Console.WriteLine(" ║                                             Nil i Alex  ║ ");
-            Console.WriteLine(" ║_________________________________________________________║ ");
+
+            // Quadre
+            string[] MenuInterfaz = {
+            " ╔═════════════════════════════════════════════════════════╗ ",
+            " ║                    MENU MATEMATIC                       ║ ",
+            " ║=========================================================║ ",
+            " ║                    1) Maxim                             ║ ",
+            " ║                    2) MCD                               ║ ",
+            " ║                    3) MCM                               ║ ",
+            " ║                    4) Factorial                         ║ ",
+            " ║                    5) Combinatori                       ║ ",
+            " ║                    6) Divisor Major                     ║ ",
+            " ║                    7) Numero Primer                     ║ ",
+            " ║                    8) NPrimers                          ║ ",
+            " ║                    9) Sortir                            ║ ",
+            " ║=========================================================║ ",
+            " ║   - Escull una opcio -                                  ║ ",
+            " ║=========================================================║ ",
+            " ║                                             Nil i Alex  ║ ",
+            " ║_________________________________________________________║ "
+
+            };
+
+            // POSICIO EN VERTICAL
+            int centerY = (Console.WindowHeight - MenuInterfaz.Length) / 2;
+
+            // Bucle per posar cada linea del menu centrada
+            foreach (string linea in MenuInterfaz)
+            {
+                // Calcular la posició
+                int centerX = (Console.WindowWidth - linea.Length) / 2;
+
+                Console.SetCursorPosition(centerX, centerY);
+                Console.WriteLine(linea);
+
+                // Increment pe rla sseuent linea
+                centerY++;
+            }
 
             opcio = Convert.ToInt32(Console.ReadLine());
 
@@ -88,17 +125,22 @@ class Program
                 }
             }
 
-            // Switch per calcular la opción
+            // Switch per calcular la opció
             switch (opcio)
             {
+                case 1:
+                    int maxim = Maxim(num1, num2);
+                    Console.WriteLine($"El Máxim de {num1} i {num2} es: {maxim}");
+                    break;
+
                 case 2:
                     int mcd = CalcularMCD(num1, num2);
-                    Console.WriteLine($"El MCD de {num1} y {num2} es: {mcd}");
+                    Console.WriteLine($"El MCD de {num1} i {num2} es: {mcd}");
                     break;
 
                 case 3:
                     int mcm = CalcularMCM(num1, num2);
-                    Console.WriteLine($"El MCM de {num1} y {num2} es: {mcm}");
+                    Console.WriteLine($"El MCM de {num1} i {num2} es: {mcm}");
                     break;
 
                 case 4:
@@ -115,11 +157,15 @@ class Program
             // Aqui fem que em d'esperar 5 segons
             if (opcio != 9)
             {
-                Console.WriteLine("Esperant 5 segons...");
-                Thread.Sleep(5000); // 5000 milisegons = 5 segons
+                for (int i = 5; i > 0; i--)
+                {
+                    Console.WriteLine($"Esperant {i} segons...");
+                    Thread.Sleep(1000); // 1000 milisegons = 1 segon
+                   
+                }
 
+                Console.WriteLine("Esperant 0 segons...");
             }
-
         } while (opcio != 9);
 
     }
