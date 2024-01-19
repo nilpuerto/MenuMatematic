@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading;
 
 class Program
@@ -24,17 +25,83 @@ class Program
         return mcm;
     }
 
-    static double CalcularFactorial(double n)
+    // Métode per calcular el Factorial
+    static int Factorial(int num)
     {
-        if (n == 0 || n == 1)
+        int result = 1;
+        for (int i = 1; i <= num; i++)
         {
-            return 1;
+            result *= i;
         }
-        else
+        return result;
+    }
+
+    // Métode per calcular Combinatori
+    static int Combinatori(int num1, int num2)
+    {
+        return Factorial(num1) / (Factorial(num2) * Factorial(num1 - num2));
+    }
+
+    // Métode per calcular el Divisor Major
+    static int DivisorMajor(int num)
+    {
+        int major = -1;
+        for (int i = 2; i <= / 2;  i++)
         {
-            return n * CalcularFactorial(n - 1);
+            if (num % i == 0)
+            {
+                major = i;
+            }
         }
     }
+    return major;
+
+    // Métode per calcular el numero primer
+    static bool Primer(int num)
+    {
+        bool primer = false;
+        int cont = 1, resultat = 0;
+        while (cont <= num)
+        {
+            if (numero % cont == 0)
+            {
+                resultat++;
+            }
+            cont++;
+        }
+
+        if (resultat <= 2)
+        {
+            primer = true;
+        }
+        return primer;
+    }
+    // Métode per calcular els 5 Primers
+    static string NPrimers(int primers)
+    {
+        int num = 1, a, b, i = 1;
+        string primersp = "";
+        while (n < primers)
+        {
+            a = 0;
+            for (b = 1; b <= i; b++)
+            {
+                if (i % b == 0)
+                {
+                    a++;
+                }
+            }
+            if (a == 2)
+            {
+                n++;
+                primersp += i + " ";
+            }
+            i++;
+        }
+        return primersp;
+    }
+
+
 
     static void Main()
     {
@@ -102,10 +169,24 @@ class Program
                     break;
 
                 case 4:
-                    double factorial = CalcularFactorial(num);
+                    double factorial = Factorial(num);
                     Console.WriteLine($"El resultat Factorial de {num} es: {factorial}");
                     break;
-
+                case 5:
+                    int convinatori = Combinatori(int num1, int num2);
+                    Console.WriteLine($"El resultat Combinatori de {num1} i {num2} es: {convinatori}");
+                    break;
+                case 6:
+                    int major = DivisorMajor(int num);
+                    Console.WriteLine($"El resultat de Divisor Major de {num} es: {major}");
+                    break;
+                case 7:
+                    bool primer = Primer(int num);
+                    Console.WriteLine($"El resultat de Numero Primer de {num} es: {primer}");
+                    break;
+                case 8:
+                    string primersprimer = NPrimers(int num);
+                    Console.WriteLine($"El resultat de PrimersPrimer de {num} es:  )
                 // Opció de sortida
                 case 9:
                     Console.WriteLine("Sortint del programa.");
