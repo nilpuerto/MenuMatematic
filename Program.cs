@@ -1,4 +1,5 @@
-﻿class Program
+﻿
+class Program
 {
     // 1.Calcular màxim
     static int Maxim(int a, int b)
@@ -70,7 +71,7 @@
             return false;
         }
 
-        //MATH SQRT per calcualr arrel quadrada
+        //MATH SQRT per calcular arrel quadrada
         for (int i = 2; i <= Math.Sqrt(num); i++)
         {
             if (num % i == 0)
@@ -81,6 +82,27 @@
 
         return true;
     }
+
+    // 8. Números primerss
+    static void MostrarNPrimersPrimers(double num, int n)
+    {
+        Console.WriteLine($"Els primers {n} números primers a partir de {num} són:");
+
+        int contador = 0;
+        int i = (int)num;
+
+        while (contador < n)
+        {
+            if (EsNumeroPrimer(i))
+            {
+                Console.Write($"{i} ");
+                contador++;
+            }
+            i++;
+        }
+
+        Console.WriteLine();
+    }
     // Main
     static void Main()
     {
@@ -89,6 +111,7 @@
         int num1 = 0;
         int num2 = 0;
         double num = 0;
+        int nPrimers = 0;
 
         // Interfaz
         do
@@ -110,7 +133,7 @@
                     " ║                    5) Combinatori                       ║ ",
                     " ║                    6) Divisor Major                     ║ ",
                     " ║                    7) Numero Primer                     ║ ",
-                    " ║                    8) NPrimers                          ║ ",
+                    " ║                    8) NPrimers  Primers                 ║ ",
                     " ║                    9) Sortir                            ║ ",
                     " ║=========================================================║ ",
                     " ║   - Escull una opcio -                                  ║ ",
@@ -141,13 +164,22 @@
             if (opcio > 0 && opcio < 9)
             {
                 // Preguntar per un sol número si tria el 4 o el 5
-                if (opcio != 4 && opcio != 5)
+                if (opcio != 4 && opcio != 5 && opcio != 8)
                 {
                     Console.Write("Escriu un número: ");
                     num1 = Convert.ToInt32(Console.ReadLine());
                     Console.Write("Escriu un altre número: ");
                     num2 = Convert.ToInt32(Console.ReadLine());
                 }
+
+                else if (opcio == 8)  // Si es la opcio 8, demana un numero i el que vol
+                {
+                    Console.Write("Introdueix el nombre de números primers que vols mostrar: ");
+                    nPrimers = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Escriu un número: ");
+                    num = Convert.ToDouble(Console.ReadLine());
+                }
+
                 else
                 {
                     Console.Write("Escriu un número: ");
@@ -194,8 +226,29 @@
                     bool esPrimer1 = EsNumeroPrimer(num1);
                     bool esPrimer2 = EsNumeroPrimer(num2);
 
-                    Console.WriteLine($"El número {num1} {(esPrimer1 ? "es" : "no es")} primer.");
-                    Console.WriteLine($"El número {num2} {(esPrimer2 ? "es" : "no es")} primer.");
+                    if (esPrimer1)
+                    {
+                        Console.WriteLine($"El número {num1} es primer.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"El número {num1} no es primer.");
+                    }
+
+                    if (esPrimer2)
+                    {
+                        Console.WriteLine($"El número {num2} es primer.");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"El número {num2} no es primer.");
+                    }
+                    break;
+
+                case 8:
+                    
+                 
+                    MostrarNPrimersPrimers(num, nPrimers);
                     break;
 
                 // Opció de sortida
