@@ -12,3 +12,17 @@ C:\Users\Usuari\Desktop\examen_nilpuerto\MenuMatematic\MenuMatematic\obj\Debug\n
 C:\Users\Usuari\Desktop\examen_nilpuerto\MenuMatematic\MenuMatematic\obj\Debug\net7.0\MenuMatematic.pdb
 C:\Users\Usuari\Desktop\examen_nilpuerto\MenuMatematic\MenuMatematic\obj\Debug\net7.0\MenuMatematic.genruntimeconfig.cache
 C:\Users\Usuari\Desktop\examen_nilpuerto\MenuMatematic\MenuMatematic\obj\Debug\net7.0\ref\MenuMatematic.dll
+C:\Users\Usuari\Downloads\MENUMATEMATIC\bin\Debug\net7.0\MenuMatematic.exe
+C:\Users\Usuari\Downloads\MENUMATEMATIC\bin\Debug\net7.0\MenuMatematic.deps.json
+C:\Users\Usuari\Downloads\MENUMATEMATIC\bin\Debug\net7.0\MenuMatematic.runtimeconfig.json
+C:\Users\Usuari\Downloads\MENUMATEMATIC\bin\Debug\net7.0\MenuMatematic.dll
+C:\Users\Usuari\Downloads\MENUMATEMATIC\bin\Debug\net7.0\MenuMatematic.pdb
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.AssemblyInfoInputs.cache
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.AssemblyInfo.cs
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.csproj.CoreCompileInputs.cache
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.dll
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\refint\MenuMatematic.dll
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.pdb
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\MenuMatematic.genruntimeconfig.cache
+C:\Users\Usuari\Downloads\MENUMATEMATIC\obj\Debug\net7.0\ref\MenuMatematic.dll
